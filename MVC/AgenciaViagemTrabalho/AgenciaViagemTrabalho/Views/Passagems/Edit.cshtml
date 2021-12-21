@@ -1,0 +1,54 @@
+﻿@model AgenciaViagemTrabalho.Models.Passagem
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Passagem</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Embarque" class="control-label"></label>
+                <input asp-for="Embarque" class="form-control" />
+                <span asp-validation-for="Embarque" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Destino" class="control-label"></label>
+                <input asp-for="Destino" class="form-control" />
+                <span asp-validation-for="Destino" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Acompanhantes" class="control-label"></label>
+                <input asp-for="Acompanhantes" class="form-control" />
+                <span asp-validation-for="Acompanhantes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ida" class="control-label"></label>
+                <input asp-for="Ida" class="form-control" />
+                <span asp-validation-for="Ida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Volta" class="control-label"></label>
+                <input asp-for="Volta" class="form-control" />
+                <span asp-validation-for="Volta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
